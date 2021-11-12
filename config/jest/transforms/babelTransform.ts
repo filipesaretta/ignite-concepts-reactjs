@@ -2,6 +2,7 @@
 
 const babelJest = require('babel-jest');
 
+
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
     return false;
@@ -15,7 +16,7 @@ const hasJsxRuntime = (() => {
   }
 })();
 
-module.exports = babelJest.createTransformer({
+module.exports = babelJest.default.createTransformer({
   presets: [
     [
       require.resolve('babel-preset-react-app'),
